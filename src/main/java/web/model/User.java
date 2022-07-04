@@ -14,16 +14,16 @@ public class User {
     private Long userId;
 
     @Column(name = "name")
-    @Pattern(regexp = "[A-Za-z]{2,15}", message = "Name should be between 2 and 15 latin characters")
+    @Pattern(regexp = "[A-Za-z]{2,15}", message = "Name should be between 2 and 20 letters")
     private String name;
 
     @Column(name = "surname")
-    @Pattern(regexp = "[A-Za-z]{2,15}", message = "Surname should be between 2 and 15 latin characters")
+    @Pattern(regexp = "[A-Za-z]{2,20}", message = "Surname should be between 2 and 20 letters")
     private String surname;
 
     @Column(name = "age")
-    @Min(value = 0, message = "Age should be >= 0")
-    @Max(value = 127, message = "Age should be < 128")
+    @Min(value = 0, message = "Age should be above 0")
+    @Max(value = 127, message = "Age should be under 128")
     private byte age;
 
     @Column(name = "email")
